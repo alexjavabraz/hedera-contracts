@@ -6,7 +6,7 @@ pragma solidity >=0.7.0 <0.9.0;
  * @title Token
  * @dev Token 
  */
-contract MagaToken {
+contract Token {
 
     address owner;
     uint256 initialSupply = 1000;
