@@ -3,15 +3,15 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 /**
- * @title MagaToken
- * @dev Magalu Token 
+ * @title Token
+ * @dev Token 
  */
 contract MagaToken {
 
     address owner;
     uint256 initialSupply = 1000;
     uint256 totalSupply = 1000;
-    string public tokenName = "MagaToken";
+    string public tokenName = "Token";
     string public tokenSymbol = "MGL";
     string public version = "1.0";
     uint8 decimals = 2;
