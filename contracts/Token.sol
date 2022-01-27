@@ -23,6 +23,7 @@ contract Token {
 
     event Transfer(address indexed from, address indexed to, uint value);
     event Approval(address indexed sender, address indexed spender, uint value);
+    event Balance(address indexed from, uint256 value);
 
     constructor(string memory _tokenName, string memory _tokenSymbol, uint256 _initialSupply ) {
         tokenName = _tokenName;
@@ -41,7 +42,7 @@ contract Token {
         _;
     }
 
-    function transfer(address _to, uint256 _value) public onlyOwner returns (bool success) {
+    function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
         balances[_to] += _value;
@@ -50,13 +51,13 @@ contract Token {
     }
  
     function balanceOf(address _owner) public onlyOwner view returns (uint256 balance) {
-        if (msg.sender != owner) return 0;
-
         return balances[_owner];
     }
 
-    function getBalance(address _owner) public view returns (uint256 balance) {
-        return balances[_owner];
+    function getBalance(address _owner) public returns (uint256 balance) {
+        uint256 result = balances[_owner];
+        emit Balance(msg.sender, result);
+        return result;
     }
 
     function myBalance() public view returns (uint256 balance) {

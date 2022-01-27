@@ -19,7 +19,9 @@ npm install truffle -g
 ```
 truffle compile
 
-truffle test ./contracts/Token.sol
+truffle migrate
+
+truffle test
 ```
 - Start Ganache
 
