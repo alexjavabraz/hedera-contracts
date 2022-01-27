@@ -2,17 +2,23 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
+import "./HederaTokenService.sol";
+import "./HederaResponseCodes.sol";
+
 /**
- * @title Token
- * @dev Token 
+ * v0.1.0
+ * Author(s): Alex Braz
+ *
+ * @title Generic Token Creator
+ * 
  */
 contract Token {
 
     address owner;
     uint256 initialSupply = 1000;
     uint256 totalSupply = 1000;
-    string public tokenName = "Token";
-    string public tokenSymbol = "MGL";
+    bytes32 public tokenName;
+    bytes32 public tokenSymbol;
     string public version = "1.0";
     uint8 decimals = 2;
     mapping (address => uint256) public balances;
@@ -22,8 +28,10 @@ contract Token {
     event Transfer(address indexed from, address indexed to, uint value);
     event Approval(address indexed sender, address indexed spender, uint value);
 
-    constructor() {
-        balances[msg.sender] = initialSupply;               // Give the creator all initial tokens
+    constructor(bytes32 _tokenName, bytes32 _tokenSymbol) {
+        tokenName = _tokenName;
+        tokenSymbol = _tokenSymbol;
+        balances[msg.sender] = initialSupply;
         owner = msg.sender;
     }
 
