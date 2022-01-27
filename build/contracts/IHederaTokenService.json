@@ -1,0 +1,3778 @@
+{
+  "contractName": "IHederaTokenService",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "accountID",
+                  "type": "address"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "amount",
+                  "type": "int64"
+                }
+              ],
+              "internalType": "struct IHederaTokenService.AccountAmount[]",
+              "name": "transfers",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "senderAccountID",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "receiverAccountID",
+                  "type": "address"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "serialNumber",
+                  "type": "int64"
+                }
+              ],
+              "internalType": "struct IHederaTokenService.NftTransfer[]",
+              "name": "nftTransfers",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct IHederaTokenService.TokenTransferList[]",
+          "name": "tokenTransfers",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "cryptoTransfer",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "amount",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "metadata",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "mintToken",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint64",
+          "name": "newTotalSupply",
+          "type": "uint64"
+        },
+        {
+          "internalType": "int64[]",
+          "name": "serialNumbers",
+          "type": "int64[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "amount",
+          "type": "uint64"
+        },
+        {
+          "internalType": "int64[]",
+          "name": "serialNumbers",
+          "type": "int64[]"
+        }
+      ],
+      "name": "burnToken",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint64",
+          "name": "newTotalSupply",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        }
+      ],
+      "name": "associateTokens",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "associateToken",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        }
+      ],
+      "name": "dissociateTokens",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "dissociateToken",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "accountId",
+          "type": "address[]"
+        },
+        {
+          "internalType": "int64[]",
+          "name": "amount",
+          "type": "int64[]"
+        }
+      ],
+      "name": "transferTokens",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "int64",
+          "name": "amount",
+          "type": "int64"
+        }
+      ],
+      "name": "transferToken",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "responseCode",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"associateToken\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"tokens\",\"type\":\"address[]\"}],\"name\":\"associateTokens\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"amount\",\"type\":\"uint64\"},{\"internalType\":\"int64[]\",\"name\":\"serialNumbers\",\"type\":\"int64[]\"}],\"name\":\"burnToken\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"},{\"internalType\":\"uint64\",\"name\":\"newTotalSupply\",\"type\":\"uint64\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"accountID\",\"type\":\"address\"},{\"internalType\":\"int64\",\"name\":\"amount\",\"type\":\"int64\"}],\"internalType\":\"struct IHederaTokenService.AccountAmount[]\",\"name\":\"transfers\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"senderAccountID\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiverAccountID\",\"type\":\"address\"},{\"internalType\":\"int64\",\"name\":\"serialNumber\",\"type\":\"int64\"}],\"internalType\":\"struct IHederaTokenService.NftTransfer[]\",\"name\":\"nftTransfers\",\"type\":\"tuple[]\"}],\"internalType\":\"struct IHederaTokenService.TokenTransferList[]\",\"name\":\"tokenTransfers\",\"type\":\"tuple[]\"}],\"name\":\"cryptoTransfer\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"dissociateToken\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"tokens\",\"type\":\"address[]\"}],\"name\":\"dissociateTokens\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"amount\",\"type\":\"uint64\"},{\"internalType\":\"bytes[]\",\"name\":\"metadata\",\"type\":\"bytes[]\"}],\"name\":\"mintToken\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"},{\"internalType\":\"uint64\",\"name\":\"newTotalSupply\",\"type\":\"uint64\"},{\"internalType\":\"int64[]\",\"name\":\"serialNumbers\",\"type\":\"int64[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"int64\",\"name\":\"amount\",\"type\":\"int64\"}],\"name\":\"transferToken\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"accountId\",\"type\":\"address[]\"},{\"internalType\":\"int64[]\",\"name\":\"amount\",\"type\":\"int64[]\"}],\"name\":\"transferTokens\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"responseCode\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"associateToken(address,address)\":{\"params\":{\"account\":\"The account to be associated with the provided token\",\"token\":\"The token to be associated with the provided account\"}},\"associateTokens(address,address[])\":{\"params\":{\"account\":\"The account to be associated with the provided tokens\",\"tokens\":\"The tokens to be associated with the provided account. In the case of NON_FUNGIBLE_UNIQUE               Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that               token type\"},\"returns\":{\"responseCode\":\"The response code for the status of the request. SUCCESS is 22.\"}},\"burnToken(address,uint64,int64[])\":{\"params\":{\"amount\":\"Applicable to tokens of type FUNGIBLE_COMMON. The amount to burn from the Treasury Account.                Amount must be a positive non-zero number, not bigger than the token balance of the treasury                account (0; balance], represented in the lowest denomination.\",\"serialNumbers\":\"Applicable to tokens of type NON_FUNGIBLE_UNIQUE. The list of serial numbers to be burned.\",\"token\":\"The token for which to burn tokens. If token does not exist, transaction results in              INVALID_TOKEN_ID\"},\"returns\":{\"newTotalSupply\":\"The new supply of tokens. For NFTs it is the total count of NFTs\",\"responseCode\":\"The response code for the status of the request. SUCCESS is 22.\"}},\"cryptoTransfer((address,(address,int64)[],(address,address,int64)[])[])\":{\"params\":{\"tokenTransfers\":\"the list of transfers to do\"},\"returns\":{\"responseCode\":\"The response code for the status of the request. SUCCESS is 22.\"}},\"dissociateToken(address,address)\":{\"params\":{\"account\":\"The account to be associated with the provided token\",\"token\":\"The token to be associated with the provided account\"}},\"dissociateTokens(address,address[])\":{\"params\":{\"account\":\"The account to be dissociated from the provided tokens\",\"tokens\":\"The tokens to be dissociated from the provided account.\"},\"returns\":{\"responseCode\":\"The response code for the status of the request. SUCCESS is 22.\"}},\"mintToken(address,uint64,bytes[])\":{\"params\":{\"amount\":\"Applicable to tokens of type FUNGIBLE_COMMON. The amount to mint to the Treasury Account.               Amount must be a positive non-zero number represented in the lowest denomination of the               token. The new supply must be lower than 2^63.\",\"metadata\":\"Applicable to tokens of type NON_FUNGIBLE_UNIQUE. A list of metadata that are being created.                 Maximum allowed size of each metadata is 100 bytes\",\"token\":\"The token for which to mint tokens. If token does not exist, transaction results in              INVALID_TOKEN_ID\"},\"returns\":{\"newTotalSupply\":\"The new supply of tokens. For NFTs it is the total count of NFTs\",\"responseCode\":\"The response code for the status of the request. SUCCESS is 22.\",\"serialNumbers\":\"If the token is an NFT the newly generate serial numbers, othersise empty.\"}},\"transferToken(address,address,address,int64)\":{\"params\":{\"amount\":\"Non-negative value to send. a negative value will result in a failure.\",\"recipient\":\"The receiver of the transaction\",\"sender\":\"The sender for the transaction\",\"token\":\"The token to transfer to/from\"}},\"transferTokens(address,address[],int64[])\":{\"params\":{\"accountId\":\"account to do a transfer to/from\",\"amount\":\"The amount from the accountId at the same index\",\"token\":\"The ID of the token as a solidity address\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"associateToken(address,address)\":{\"notice\":\"Single-token variant of associateTokens. Will be mapped to a single entry array call of associateTokens\"},\"associateTokens(address,address[])\":{\"notice\":\"Associates the provided account with the provided tokens. Must be signed by the provided  Account's key or called from the accounts contract key  If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.  If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.  If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.  If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.  If an association between the provided account and any of the tokens already exists, the  transaction will resolve to TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT.  If the provided account's associations count exceed the constraint of maximum token associations    per account, the transaction will resolve to TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED.  On success, associations between the provided account and tokens are made and the account is    ready to interact with the tokens.\"},\"burnToken(address,uint64,int64[])\":{\"notice\":\"Burns an amount of the token from the defined treasury account\"},\"cryptoTransfer((address,(address,int64)[],(address,address,int64)[])[])\":{\"notice\":\"Initiates a Token Transfer\"},\"dissociateToken(address,address)\":{\"notice\":\"Single-token variant of dissociateTokens. Will be mapped to a single entry array call of dissociateTokens\"},\"dissociateTokens(address,address[])\":{\"notice\":\"Dissociates the provided account with the provided tokens. Must be signed by the provided Account's key. If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID. If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED. If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF. If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED. If an association between the provided account and any of the tokens does not exist, the transaction will resolve to TOKEN_NOT_ASSOCIATED_TO_ACCOUNT. If a token has not been deleted and has not expired, and the user has a nonzero balance, the transaction will resolve to TRANSACTION_REQUIRES_ZERO_TOKEN_BALANCES. If a <b>fungible token</b> has expired, the user can disassociate even if their token balance is not zero. If a <b>non fungible token</b> has expired, the user can <b>not</b> disassociate if their token balance is not zero. The transaction will resolve to TRANSACTION_REQUIRED_ZERO_TOKEN_BALANCES. On success, associations between the provided account and tokens are removed.\"},\"mintToken(address,uint64,bytes[])\":{\"notice\":\"Mints an amount of the token to the defined treasury account\"},\"transferToken(address,address,address,int64)\":{\"notice\":\"Transfers tokens where the calling account/contract is implicitly the first entry in the token transfer list, where the amount is the value needed to zero balance the transfers. Regular signing rules apply for sending (positive amount) or receiving (negative amount)\"},\"transferTokens(address,address[],int64[])\":{\"notice\":\"Initiates a Fungible Token Transfer\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IHederaTokenService.sol\":\"IHederaTokenService\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IHederaTokenService.sol\":{\"keccak256\":\"0xc2ff611feb16b056da9164dfa9385423bb4564ea4d21cbd536ab0688948e3414\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://efbfeb0ba99f0b65050f4db9c0764092a4740b679123103aaf3d5253ef3c6085\",\"dweb:/ipfs/QmYFitokhKRFwAFz1RdhiZorUoQe84bSjuvEjbVx3m1E68\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: Apache-2.0\npragma solidity >=0.4.9 <0.9.0;\npragma experimental ABIEncoderV2;\n\ninterface IHederaTokenService {\n\n    /// Transfers cryptocurrency among two or more accounts by making the desired adjustments to their\n    /// balances. Each transfer list can specify up to 10 adjustments. Each negative amount is withdrawn\n    /// from the corresponding account (a sender), and each positive one is added to the corresponding\n    /// account (a receiver). The amounts list must sum to zero. Each amount is a number of tinybars\n    /// (there are 100,000,000 tinybars in one hbar).  If any sender account fails to have sufficient\n    /// hbars, then the entire transaction fails, and none of those transfers occur, though the\n    /// transaction fee is still charged. This transaction must be signed by the keys for all the sending\n    /// accounts, and for any receiving accounts that have receiverSigRequired == true. The signatures\n    /// are in the same order as the accounts, skipping those accounts that don't need a signature.\n    struct AccountAmount {\n        // The Account ID, as a solidity address, that sends/receives cryptocurrency or tokens\n        address accountID;\n\n        // The amount of  the lowest denomination of the given token that\n        // the account sends(negative) or receives(positive)\n        int64 amount;\n    }\n\n    /// A sender account, a receiver account, and the serial number of an NFT of a Token with\n    /// NON_FUNGIBLE_UNIQUE type. When minting NFTs the sender will be the default AccountID instance\n    /// (0.0.0 aka 0x0) and when burning NFTs, the receiver will be the default AccountID instance.\n    struct NftTransfer {\n        // The solidity address of the sender\n        address senderAccountID;\n\n        // The solidity address of the receiver\n        address receiverAccountID;\n\n        // The serial number of the NFT\n        int64 serialNumber;\n    }\n\n    struct TokenTransferList {\n        // The ID of the token as a solidity address\n        address token;\n\n        // Applicable to tokens of type FUNGIBLE_COMMON. Multiple list of AccountAmounts, each of which\n        // has an account and amount.\n        AccountAmount[] transfers;\n\n        // Applicable to tokens of type NON_FUNGIBLE_UNIQUE. Multiple list of NftTransfers, each of\n        // which has a sender and receiver account, including the serial number of the NFT\n        NftTransfer[] nftTransfers;\n    }\n\n    /**********************\n     * Direct HTS Calls   *\n     **********************/\n\n    /// Initiates a Token Transfer\n    /// @param tokenTransfers the list of transfers to do\n    /// @return responseCode The response code for the status of the request. SUCCESS is 22.\n    function cryptoTransfer(TokenTransferList[] memory tokenTransfers) external returns (int responseCode);\n\n    /// Mints an amount of the token to the defined treasury account\n    /// @param token The token for which to mint tokens. If token does not exist, transaction results in\n    ///              INVALID_TOKEN_ID\n    /// @param amount Applicable to tokens of type FUNGIBLE_COMMON. The amount to mint to the Treasury Account.\n    ///               Amount must be a positive non-zero number represented in the lowest denomination of the\n    ///               token. The new supply must be lower than 2^63.\n    /// @param metadata Applicable to tokens of type NON_FUNGIBLE_UNIQUE. A list of metadata that are being created.\n    ///                 Maximum allowed size of each metadata is 100 bytes\n    /// @return responseCode The response code for the status of the request. SUCCESS is 22.\n    /// @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs\n    /// @return serialNumbers If the token is an NFT the newly generate serial numbers, othersise empty.\n    function mintToken(address token, uint64 amount, bytes[] memory metadata) external\n        returns (int responseCode, uint64 newTotalSupply, int64[] memory serialNumbers);\n\n    /// Burns an amount of the token from the defined treasury account\n    /// @param token The token for which to burn tokens. If token does not exist, transaction results in\n    ///              INVALID_TOKEN_ID\n    /// @param amount  Applicable to tokens of type FUNGIBLE_COMMON. The amount to burn from the Treasury Account.\n    ///                Amount must be a positive non-zero number, not bigger than the token balance of the treasury\n    ///                account (0; balance], represented in the lowest denomination.\n    /// @param serialNumbers Applicable to tokens of type NON_FUNGIBLE_UNIQUE. The list of serial numbers to be burned.\n    /// @return responseCode The response code for the status of the request. SUCCESS is 22.\n    /// @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs\n    function burnToken(address token, uint64 amount, int64[] memory serialNumbers) external\n        returns (int responseCode, uint64 newTotalSupply);\n\n    ///  Associates the provided account with the provided tokens. Must be signed by the provided\n    ///  Account's key or called from the accounts contract key\n    ///  If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n    ///  If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n    ///  If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n    ///  If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n    ///  If an association between the provided account and any of the tokens already exists, the\n    ///  transaction will resolve to TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT.\n    ///  If the provided account's associations count exceed the constraint of maximum token associations\n    ///    per account, the transaction will resolve to TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED.\n    ///  On success, associations between the provided account and tokens are made and the account is\n    ///    ready to interact with the tokens.\n    /// @param account The account to be associated with the provided tokens\n    /// @param tokens The tokens to be associated with the provided account. In the case of NON_FUNGIBLE_UNIQUE\n    ///               Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that\n    ///               token type\n    /// @return responseCode The response code for the status of the request. SUCCESS is 22.\n    function associateTokens(address account, address[] memory tokens) external returns (int responseCode);\n\n    /// Single-token variant of associateTokens. Will be mapped to a single entry array call of associateTokens\n    /// @param account The account to be associated with the provided token\n    /// @param token The token to be associated with the provided account\n    function associateToken(address account, address token) external returns (int responseCode);\n\n    /// Dissociates the provided account with the provided tokens. Must be signed by the provided\n    /// Account's key.\n    /// If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n    /// If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n    /// If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n    /// If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n    /// If an association between the provided account and any of the tokens does not exist, the\n    /// transaction will resolve to TOKEN_NOT_ASSOCIATED_TO_ACCOUNT.\n    /// If a token has not been deleted and has not expired, and the user has a nonzero balance, the\n    /// transaction will resolve to TRANSACTION_REQUIRES_ZERO_TOKEN_BALANCES.\n    /// If a <b>fungible token</b> has expired, the user can disassociate even if their token balance is\n    /// not zero.\n    /// If a <b>non fungible token</b> has expired, the user can <b>not</b> disassociate if their token\n    /// balance is not zero. The transaction will resolve to TRANSACTION_REQUIRED_ZERO_TOKEN_BALANCES.\n    /// On success, associations between the provided account and tokens are removed.\n    /// @param account The account to be dissociated from the provided tokens\n    /// @param tokens The tokens to be dissociated from the provided account.\n    /// @return responseCode The response code for the status of the request. SUCCESS is 22.\n    function dissociateTokens(address account, address[] memory tokens) external returns (int responseCode);\n\n    /// Single-token variant of dissociateTokens. Will be mapped to a single entry array call of dissociateTokens\n    /// @param account The account to be associated with the provided token\n    /// @param token The token to be associated with the provided account\n    function dissociateToken(address account, address token) external returns (int responseCode);\n\n    /**********************\n     * ABIV1 calls        *\n     **********************/\n\n    /// Initiates a Fungible Token Transfer\n    /// @param token The ID of the token as a solidity address\n    /// @param accountId account to do a transfer to/from\n    /// @param amount The amount from the accountId at the same index\n    function transferTokens(address token, address[] memory accountId, int64[] memory amount) external\n        returns (int responseCode);\n\n    /// Transfers tokens where the calling account/contract is implicitly the first entry in the token transfer list,\n    /// where the amount is the value needed to zero balance the transfers. Regular signing rules apply for sending\n    /// (positive amount) or receiving (negative amount)\n    /// @param token The token to transfer to/from\n    /// @param sender The sender for the transaction\n    /// @param recipient The receiver of the transaction\n    /// @param amount Non-negative value to send. a negative value will result in a failure.\n    function transferToken(address token, address sender, address recipient, int64 amount) external\n        returns (int responseCode);\n\n\n}",
+  "sourcePath": "/home/abraz/projetos/hedera-contracts/contracts/IHederaTokenService.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IHederaTokenService.sol",
+    "exportedSymbols": {
+      "IHederaTokenService": [
+        1087
+      ]
+    },
+    "id": 1088,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 949,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".9",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:31:2"
+      },
+      {
+        "id": 950,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "71:33:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IHederaTokenService",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 1087,
+        "linearizedBaseContracts": [
+          1087
+        ],
+        "name": "IHederaTokenService",
+        "nameLocation": "116:19:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IHederaTokenService.AccountAmount",
+            "id": 955,
+            "members": [
+              {
+                "constant": false,
+                "id": 952,
+                "mutability": "mutable",
+                "name": "accountID",
+                "nameLocation": "1196:9:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 955,
+                "src": "1188:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 951,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1188:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 954,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "1357:6:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 955,
+                "src": "1351:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 953,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1351:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "AccountAmount",
+            "nameLocation": "1069:13:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1062:308:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IHederaTokenService.NftTransfer",
+            "id": 962,
+            "members": [
+              {
+                "constant": false,
+                "id": 957,
+                "mutability": "mutable",
+                "name": "senderAccountID",
+                "nameLocation": "1755:15:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1747:23:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 956,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1747:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 959,
+                "mutability": "mutable",
+                "name": "receiverAccountID",
+                "nameLocation": "1837:17:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1829:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 958,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1829:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 961,
+                "mutability": "mutable",
+                "name": "serialNumber",
+                "nameLocation": "1911:12:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1905:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 960,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1905:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "NftTransfer",
+            "nameLocation": "1679:11:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1672:258:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IHederaTokenService.TokenTransferList",
+            "id": 973,
+            "members": [
+              {
+                "constant": false,
+                "id": 964,
+                "mutability": "mutable",
+                "name": "token",
+                "nameLocation": "2032:5:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2024:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 963,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2024:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 968,
+                "mutability": "mutable",
+                "name": "transfers",
+                "nameLocation": "2206:9:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2190:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_AccountAmount_$955_storage_$dyn_storage_ptr",
+                  "typeString": "struct IHederaTokenService.AccountAmount[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 966,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 965,
+                      "name": "AccountAmount",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 955,
+                      "src": "2190:13:2"
+                    },
+                    "referencedDeclaration": 955,
+                    "src": "2190:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_AccountAmount_$955_storage_ptr",
+                      "typeString": "struct IHederaTokenService.AccountAmount"
+                    }
+                  },
+                  "id": 967,
+                  "nodeType": "ArrayTypeName",
+                  "src": "2190:15:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_AccountAmount_$955_storage_$dyn_storage_ptr",
+                    "typeString": "struct IHederaTokenService.AccountAmount[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 972,
+                "mutability": "mutable",
+                "name": "nftTransfers",
+                "nameLocation": "2431:12:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2417:26:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_NftTransfer_$962_storage_$dyn_storage_ptr",
+                  "typeString": "struct IHederaTokenService.NftTransfer[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 970,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 969,
+                      "name": "NftTransfer",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 962,
+                      "src": "2417:11:2"
+                    },
+                    "referencedDeclaration": 962,
+                    "src": "2417:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NftTransfer_$962_storage_ptr",
+                      "typeString": "struct IHederaTokenService.NftTransfer"
+                    }
+                  },
+                  "id": 971,
+                  "nodeType": "ArrayTypeName",
+                  "src": "2417:13:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_NftTransfer_$962_storage_$dyn_storage_ptr",
+                    "typeString": "struct IHederaTokenService.NftTransfer[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "TokenTransferList",
+            "nameLocation": "1943:17:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1936:514:2",
+            "visibility": "public"
+          },
+          {
+            "documentation": {
+              "id": 974,
+              "nodeType": "StructuredDocumentation",
+              "src": "2542:181:2",
+              "text": "Initiates a Token Transfer\n @param tokenTransfers the list of transfers to do\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "189a554c",
+            "id": 983,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cryptoTransfer",
+            "nameLocation": "2737:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 979,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 978,
+                  "mutability": "mutable",
+                  "name": "tokenTransfers",
+                  "nameLocation": "2779:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 983,
+                  "src": "2752:41:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_TokenTransferList_$973_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IHederaTokenService.TokenTransferList[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 976,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 975,
+                        "name": "TokenTransferList",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 973,
+                        "src": "2752:17:2"
+                      },
+                      "referencedDeclaration": 973,
+                      "src": "2752:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_TokenTransferList_$973_storage_ptr",
+                        "typeString": "struct IHederaTokenService.TokenTransferList"
+                      }
+                    },
+                    "id": 977,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2752:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_TokenTransferList_$973_storage_$dyn_storage_ptr",
+                      "typeString": "struct IHederaTokenService.TokenTransferList[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2751:43:2"
+            },
+            "returnParameters": {
+              "id": 982,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 981,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "2817:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 983,
+                  "src": "2813:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 980,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2813:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2812:18:2"
+            },
+            "scope": 1087,
+            "src": "2728:103:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 984,
+              "nodeType": "StructuredDocumentation",
+              "src": "2837:984:2",
+              "text": "Mints an amount of the token to the defined treasury account\n @param token The token for which to mint tokens. If token does not exist, transaction results in\n              INVALID_TOKEN_ID\n @param amount Applicable to tokens of type FUNGIBLE_COMMON. The amount to mint to the Treasury Account.\n               Amount must be a positive non-zero number represented in the lowest denomination of the\n               token. The new supply must be lower than 2^63.\n @param metadata Applicable to tokens of type NON_FUNGIBLE_UNIQUE. A list of metadata that are being created.\n                 Maximum allowed size of each metadata is 100 bytes\n @return responseCode The response code for the status of the request. SUCCESS is 22.\n @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs\n @return serialNumbers If the token is an NFT the newly generate serial numbers, othersise empty."
+            },
+            "functionSelector": "278e0b88",
+            "id": 1001,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mintToken",
+            "nameLocation": "3835:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 992,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 986,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "3853:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3845:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3845:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 988,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "3867:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3860:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 987,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3860:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 991,
+                  "mutability": "mutable",
+                  "name": "metadata",
+                  "nameLocation": "3890:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3875:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "bytes[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 989,
+                      "name": "bytes",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3875:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage_ptr",
+                        "typeString": "bytes"
+                      }
+                    },
+                    "id": 990,
+                    "nodeType": "ArrayTypeName",
+                    "src": "3875:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                      "typeString": "bytes[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3844:55:2"
+            },
+            "returnParameters": {
+              "id": 1000,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 994,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "3930:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3926:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 993,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3926:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 996,
+                  "mutability": "mutable",
+                  "name": "newTotalSupply",
+                  "nameLocation": "3951:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3944:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 995,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3944:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 999,
+                  "mutability": "mutable",
+                  "name": "serialNumbers",
+                  "nameLocation": "3982:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3967:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 997,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3967:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 998,
+                    "nodeType": "ArrayTypeName",
+                    "src": "3967:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3925:71:2"
+            },
+            "scope": 1087,
+            "src": "3826:171:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1002,
+              "nodeType": "StructuredDocumentation",
+              "src": "4003:834:2",
+              "text": "Burns an amount of the token from the defined treasury account\n @param token The token for which to burn tokens. If token does not exist, transaction results in\n              INVALID_TOKEN_ID\n @param amount  Applicable to tokens of type FUNGIBLE_COMMON. The amount to burn from the Treasury Account.\n                Amount must be a positive non-zero number, not bigger than the token balance of the treasury\n                account (0; balance], represented in the lowest denomination.\n @param serialNumbers Applicable to tokens of type NON_FUNGIBLE_UNIQUE. The list of serial numbers to be burned.\n @return responseCode The response code for the status of the request. SUCCESS is 22.\n @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs"
+            },
+            "functionSelector": "acb9cff9",
+            "id": 1016,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnToken",
+            "nameLocation": "4851:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1010,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1004,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "4869:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4861:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1003,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4861:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1006,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "4883:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4876:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1005,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4876:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1009,
+                  "mutability": "mutable",
+                  "name": "serialNumbers",
+                  "nameLocation": "4906:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4891:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1007,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4891:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 1008,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4891:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4860:60:2"
+            },
+            "returnParameters": {
+              "id": 1015,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1012,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "4951:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4947:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1011,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4947:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1014,
+                  "mutability": "mutable",
+                  "name": "newTotalSupply",
+                  "nameLocation": "4972:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4965:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1013,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4965:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4946:41:2"
+            },
+            "scope": 1087,
+            "src": "4842:146:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1017,
+              "nodeType": "StructuredDocumentation",
+              "src": "4994:1515:2",
+              "text": "Associates the provided account with the provided tokens. Must be signed by the provided\n  Account's key or called from the accounts contract key\n  If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n  If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n  If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n  If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n  If an association between the provided account and any of the tokens already exists, the\n  transaction will resolve to TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT.\n  If the provided account's associations count exceed the constraint of maximum token associations\n    per account, the transaction will resolve to TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED.\n  On success, associations between the provided account and tokens are made and the account is\n    ready to interact with the tokens.\n @param account The account to be associated with the provided tokens\n @param tokens The tokens to be associated with the provided account. In the case of NON_FUNGIBLE_UNIQUE\n               Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that\n               token type\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "2e63879b",
+            "id": 1027,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "associateTokens",
+            "nameLocation": "6523:15:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1023,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1019,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "6547:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6539:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1018,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6539:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1022,
+                  "mutability": "mutable",
+                  "name": "tokens",
+                  "nameLocation": "6573:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6556:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1020,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "6556:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1021,
+                    "nodeType": "ArrayTypeName",
+                    "src": "6556:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6538:42:2"
+            },
+            "returnParameters": {
+              "id": 1026,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1025,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "6603:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6599:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1024,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6599:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6598:18:2"
+            },
+            "scope": 1087,
+            "src": "6514:103:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1028,
+              "nodeType": "StructuredDocumentation",
+              "src": "6623:257:2",
+              "text": "Single-token variant of associateTokens. Will be mapped to a single entry array call of associateTokens\n @param account The account to be associated with the provided token\n @param token The token to be associated with the provided account"
+            },
+            "functionSelector": "49146bde",
+            "id": 1037,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "associateToken",
+            "nameLocation": "6894:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1033,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1030,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "6917:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6909:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1029,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6909:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1032,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "6934:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6926:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1031,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6926:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6908:32:2"
+            },
+            "returnParameters": {
+              "id": 1036,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1035,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "6963:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6959:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1034,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6959:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6958:18:2"
+            },
+            "scope": 1087,
+            "src": "6885:92:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1038,
+              "nodeType": "StructuredDocumentation",
+              "src": "6983:1533:2",
+              "text": "Dissociates the provided account with the provided tokens. Must be signed by the provided\n Account's key.\n If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n If an association between the provided account and any of the tokens does not exist, the\n transaction will resolve to TOKEN_NOT_ASSOCIATED_TO_ACCOUNT.\n If a token has not been deleted and has not expired, and the user has a nonzero balance, the\n transaction will resolve to TRANSACTION_REQUIRES_ZERO_TOKEN_BALANCES.\n If a <b>fungible token</b> has expired, the user can disassociate even if their token balance is\n not zero.\n If a <b>non fungible token</b> has expired, the user can <b>not</b> disassociate if their token\n balance is not zero. The transaction will resolve to TRANSACTION_REQUIRED_ZERO_TOKEN_BALANCES.\n On success, associations between the provided account and tokens are removed.\n @param account The account to be dissociated from the provided tokens\n @param tokens The tokens to be dissociated from the provided account.\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "78b63918",
+            "id": 1048,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dissociateTokens",
+            "nameLocation": "8530:16:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1044,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1040,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "8555:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8547:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1039,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8547:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1043,
+                  "mutability": "mutable",
+                  "name": "tokens",
+                  "nameLocation": "8581:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8564:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1041,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "8564:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1042,
+                    "nodeType": "ArrayTypeName",
+                    "src": "8564:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8546:42:2"
+            },
+            "returnParameters": {
+              "id": 1047,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1046,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "8611:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8607:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1045,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8607:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8606:18:2"
+            },
+            "scope": 1087,
+            "src": "8521:104:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1049,
+              "nodeType": "StructuredDocumentation",
+              "src": "8631:259:2",
+              "text": "Single-token variant of dissociateTokens. Will be mapped to a single entry array call of dissociateTokens\n @param account The account to be associated with the provided token\n @param token The token to be associated with the provided account"
+            },
+            "functionSelector": "099794e8",
+            "id": 1058,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dissociateToken",
+            "nameLocation": "8904:15:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1051,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "8928:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8920:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1050,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8920:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1053,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "8945:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8937:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1052,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8937:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8919:32:2"
+            },
+            "returnParameters": {
+              "id": 1057,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1056,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "8974:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8970:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1055,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8970:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8969:18:2"
+            },
+            "scope": 1087,
+            "src": "8895:93:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1059,
+              "nodeType": "StructuredDocumentation",
+              "src": "9080:230:2",
+              "text": "Initiates a Fungible Token Transfer\n @param token The ID of the token as a solidity address\n @param accountId account to do a transfer to/from\n @param amount The amount from the accountId at the same index"
+            },
+            "functionSelector": "82bba493",
+            "id": 1072,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferTokens",
+            "nameLocation": "9324:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1068,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1061,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "9347:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9339:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1060,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9339:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1064,
+                  "mutability": "mutable",
+                  "name": "accountId",
+                  "nameLocation": "9371:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9354:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1062,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "9354:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1063,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9354:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1067,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "9397:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9382:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1065,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "9382:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 1066,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9382:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9338:66:2"
+            },
+            "returnParameters": {
+              "id": 1071,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1070,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "9435:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9431:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1069,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9431:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9430:18:2"
+            },
+            "scope": 1087,
+            "src": "9315:134:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1073,
+              "nodeType": "StructuredDocumentation",
+              "src": "9455:540:2",
+              "text": "Transfers tokens where the calling account/contract is implicitly the first entry in the token transfer list,\n where the amount is the value needed to zero balance the transfers. Regular signing rules apply for sending\n (positive amount) or receiving (negative amount)\n @param token The token to transfer to/from\n @param sender The sender for the transaction\n @param recipient The receiver of the transaction\n @param amount Non-negative value to send. a negative value will result in a failure."
+            },
+            "functionSelector": "eca36917",
+            "id": 1086,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferToken",
+            "nameLocation": "10009:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1082,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1075,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "10031:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10023:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1074,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10023:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1077,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "10046:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10038:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1076,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10038:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1079,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "10062:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10054:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1078,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10054:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1081,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "10079:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10073:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  },
+                  "typeName": {
+                    "id": 1080,
+                    "name": "int64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10073:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int64",
+                      "typeString": "int64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10022:64:2"
+            },
+            "returnParameters": {
+              "id": 1085,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1084,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "10117:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10113:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1083,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10113:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10112:18:2"
+            },
+            "scope": 1087,
+            "src": "10000:131:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1088,
+        "src": "106:10029:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:10096:2"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IHederaTokenService.sol",
+    "exportedSymbols": {
+      "IHederaTokenService": [
+        1087
+      ]
+    },
+    "id": 1088,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 949,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".9",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:31:2"
+      },
+      {
+        "id": 950,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "71:33:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IHederaTokenService",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 1087,
+        "linearizedBaseContracts": [
+          1087
+        ],
+        "name": "IHederaTokenService",
+        "nameLocation": "116:19:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IHederaTokenService.AccountAmount",
+            "id": 955,
+            "members": [
+              {
+                "constant": false,
+                "id": 952,
+                "mutability": "mutable",
+                "name": "accountID",
+                "nameLocation": "1196:9:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 955,
+                "src": "1188:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 951,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1188:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 954,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "1357:6:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 955,
+                "src": "1351:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 953,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1351:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "AccountAmount",
+            "nameLocation": "1069:13:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1062:308:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IHederaTokenService.NftTransfer",
+            "id": 962,
+            "members": [
+              {
+                "constant": false,
+                "id": 957,
+                "mutability": "mutable",
+                "name": "senderAccountID",
+                "nameLocation": "1755:15:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1747:23:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 956,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1747:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 959,
+                "mutability": "mutable",
+                "name": "receiverAccountID",
+                "nameLocation": "1837:17:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1829:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 958,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1829:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 961,
+                "mutability": "mutable",
+                "name": "serialNumber",
+                "nameLocation": "1911:12:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 962,
+                "src": "1905:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 960,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1905:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "NftTransfer",
+            "nameLocation": "1679:11:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1672:258:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IHederaTokenService.TokenTransferList",
+            "id": 973,
+            "members": [
+              {
+                "constant": false,
+                "id": 964,
+                "mutability": "mutable",
+                "name": "token",
+                "nameLocation": "2032:5:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2024:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 963,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2024:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 968,
+                "mutability": "mutable",
+                "name": "transfers",
+                "nameLocation": "2206:9:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2190:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_AccountAmount_$955_storage_$dyn_storage_ptr",
+                  "typeString": "struct IHederaTokenService.AccountAmount[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 966,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 965,
+                      "name": "AccountAmount",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 955,
+                      "src": "2190:13:2"
+                    },
+                    "referencedDeclaration": 955,
+                    "src": "2190:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_AccountAmount_$955_storage_ptr",
+                      "typeString": "struct IHederaTokenService.AccountAmount"
+                    }
+                  },
+                  "id": 967,
+                  "nodeType": "ArrayTypeName",
+                  "src": "2190:15:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_AccountAmount_$955_storage_$dyn_storage_ptr",
+                    "typeString": "struct IHederaTokenService.AccountAmount[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 972,
+                "mutability": "mutable",
+                "name": "nftTransfers",
+                "nameLocation": "2431:12:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 973,
+                "src": "2417:26:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_NftTransfer_$962_storage_$dyn_storage_ptr",
+                  "typeString": "struct IHederaTokenService.NftTransfer[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 970,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 969,
+                      "name": "NftTransfer",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 962,
+                      "src": "2417:11:2"
+                    },
+                    "referencedDeclaration": 962,
+                    "src": "2417:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_NftTransfer_$962_storage_ptr",
+                      "typeString": "struct IHederaTokenService.NftTransfer"
+                    }
+                  },
+                  "id": 971,
+                  "nodeType": "ArrayTypeName",
+                  "src": "2417:13:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_NftTransfer_$962_storage_$dyn_storage_ptr",
+                    "typeString": "struct IHederaTokenService.NftTransfer[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "TokenTransferList",
+            "nameLocation": "1943:17:2",
+            "nodeType": "StructDefinition",
+            "scope": 1087,
+            "src": "1936:514:2",
+            "visibility": "public"
+          },
+          {
+            "documentation": {
+              "id": 974,
+              "nodeType": "StructuredDocumentation",
+              "src": "2542:181:2",
+              "text": "Initiates a Token Transfer\n @param tokenTransfers the list of transfers to do\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "189a554c",
+            "id": 983,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cryptoTransfer",
+            "nameLocation": "2737:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 979,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 978,
+                  "mutability": "mutable",
+                  "name": "tokenTransfers",
+                  "nameLocation": "2779:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 983,
+                  "src": "2752:41:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_TokenTransferList_$973_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IHederaTokenService.TokenTransferList[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 976,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 975,
+                        "name": "TokenTransferList",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 973,
+                        "src": "2752:17:2"
+                      },
+                      "referencedDeclaration": 973,
+                      "src": "2752:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_TokenTransferList_$973_storage_ptr",
+                        "typeString": "struct IHederaTokenService.TokenTransferList"
+                      }
+                    },
+                    "id": 977,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2752:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_TokenTransferList_$973_storage_$dyn_storage_ptr",
+                      "typeString": "struct IHederaTokenService.TokenTransferList[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2751:43:2"
+            },
+            "returnParameters": {
+              "id": 982,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 981,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "2817:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 983,
+                  "src": "2813:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 980,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2813:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2812:18:2"
+            },
+            "scope": 1087,
+            "src": "2728:103:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 984,
+              "nodeType": "StructuredDocumentation",
+              "src": "2837:984:2",
+              "text": "Mints an amount of the token to the defined treasury account\n @param token The token for which to mint tokens. If token does not exist, transaction results in\n              INVALID_TOKEN_ID\n @param amount Applicable to tokens of type FUNGIBLE_COMMON. The amount to mint to the Treasury Account.\n               Amount must be a positive non-zero number represented in the lowest denomination of the\n               token. The new supply must be lower than 2^63.\n @param metadata Applicable to tokens of type NON_FUNGIBLE_UNIQUE. A list of metadata that are being created.\n                 Maximum allowed size of each metadata is 100 bytes\n @return responseCode The response code for the status of the request. SUCCESS is 22.\n @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs\n @return serialNumbers If the token is an NFT the newly generate serial numbers, othersise empty."
+            },
+            "functionSelector": "278e0b88",
+            "id": 1001,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mintToken",
+            "nameLocation": "3835:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 992,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 986,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "3853:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3845:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3845:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 988,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "3867:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3860:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 987,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3860:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 991,
+                  "mutability": "mutable",
+                  "name": "metadata",
+                  "nameLocation": "3890:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3875:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "bytes[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 989,
+                      "name": "bytes",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3875:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage_ptr",
+                        "typeString": "bytes"
+                      }
+                    },
+                    "id": 990,
+                    "nodeType": "ArrayTypeName",
+                    "src": "3875:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                      "typeString": "bytes[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3844:55:2"
+            },
+            "returnParameters": {
+              "id": 1000,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 994,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "3930:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3926:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 993,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3926:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 996,
+                  "mutability": "mutable",
+                  "name": "newTotalSupply",
+                  "nameLocation": "3951:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3944:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 995,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3944:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 999,
+                  "mutability": "mutable",
+                  "name": "serialNumbers",
+                  "nameLocation": "3982:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1001,
+                  "src": "3967:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 997,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3967:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 998,
+                    "nodeType": "ArrayTypeName",
+                    "src": "3967:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3925:71:2"
+            },
+            "scope": 1087,
+            "src": "3826:171:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1002,
+              "nodeType": "StructuredDocumentation",
+              "src": "4003:834:2",
+              "text": "Burns an amount of the token from the defined treasury account\n @param token The token for which to burn tokens. If token does not exist, transaction results in\n              INVALID_TOKEN_ID\n @param amount  Applicable to tokens of type FUNGIBLE_COMMON. The amount to burn from the Treasury Account.\n                Amount must be a positive non-zero number, not bigger than the token balance of the treasury\n                account (0; balance], represented in the lowest denomination.\n @param serialNumbers Applicable to tokens of type NON_FUNGIBLE_UNIQUE. The list of serial numbers to be burned.\n @return responseCode The response code for the status of the request. SUCCESS is 22.\n @return newTotalSupply The new supply of tokens. For NFTs it is the total count of NFTs"
+            },
+            "functionSelector": "acb9cff9",
+            "id": 1016,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnToken",
+            "nameLocation": "4851:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1010,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1004,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "4869:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4861:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1003,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4861:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1006,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "4883:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4876:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1005,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4876:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1009,
+                  "mutability": "mutable",
+                  "name": "serialNumbers",
+                  "nameLocation": "4906:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4891:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1007,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4891:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 1008,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4891:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4860:60:2"
+            },
+            "returnParameters": {
+              "id": 1015,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1012,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "4951:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4947:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1011,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4947:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1014,
+                  "mutability": "mutable",
+                  "name": "newTotalSupply",
+                  "nameLocation": "4972:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1016,
+                  "src": "4965:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1013,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4965:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4946:41:2"
+            },
+            "scope": 1087,
+            "src": "4842:146:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1017,
+              "nodeType": "StructuredDocumentation",
+              "src": "4994:1515:2",
+              "text": "Associates the provided account with the provided tokens. Must be signed by the provided\n  Account's key or called from the accounts contract key\n  If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n  If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n  If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n  If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n  If an association between the provided account and any of the tokens already exists, the\n  transaction will resolve to TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT.\n  If the provided account's associations count exceed the constraint of maximum token associations\n    per account, the transaction will resolve to TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED.\n  On success, associations between the provided account and tokens are made and the account is\n    ready to interact with the tokens.\n @param account The account to be associated with the provided tokens\n @param tokens The tokens to be associated with the provided account. In the case of NON_FUNGIBLE_UNIQUE\n               Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that\n               token type\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "2e63879b",
+            "id": 1027,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "associateTokens",
+            "nameLocation": "6523:15:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1023,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1019,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "6547:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6539:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1018,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6539:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1022,
+                  "mutability": "mutable",
+                  "name": "tokens",
+                  "nameLocation": "6573:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6556:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1020,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "6556:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1021,
+                    "nodeType": "ArrayTypeName",
+                    "src": "6556:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6538:42:2"
+            },
+            "returnParameters": {
+              "id": 1026,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1025,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "6603:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1027,
+                  "src": "6599:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1024,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6599:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6598:18:2"
+            },
+            "scope": 1087,
+            "src": "6514:103:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1028,
+              "nodeType": "StructuredDocumentation",
+              "src": "6623:257:2",
+              "text": "Single-token variant of associateTokens. Will be mapped to a single entry array call of associateTokens\n @param account The account to be associated with the provided token\n @param token The token to be associated with the provided account"
+            },
+            "functionSelector": "49146bde",
+            "id": 1037,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "associateToken",
+            "nameLocation": "6894:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1033,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1030,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "6917:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6909:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1029,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6909:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1032,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "6934:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6926:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1031,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6926:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6908:32:2"
+            },
+            "returnParameters": {
+              "id": 1036,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1035,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "6963:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1037,
+                  "src": "6959:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1034,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6959:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6958:18:2"
+            },
+            "scope": 1087,
+            "src": "6885:92:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1038,
+              "nodeType": "StructuredDocumentation",
+              "src": "6983:1533:2",
+              "text": "Dissociates the provided account with the provided tokens. Must be signed by the provided\n Account's key.\n If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.\n If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.\n If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.\n If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.\n If an association between the provided account and any of the tokens does not exist, the\n transaction will resolve to TOKEN_NOT_ASSOCIATED_TO_ACCOUNT.\n If a token has not been deleted and has not expired, and the user has a nonzero balance, the\n transaction will resolve to TRANSACTION_REQUIRES_ZERO_TOKEN_BALANCES.\n If a <b>fungible token</b> has expired, the user can disassociate even if their token balance is\n not zero.\n If a <b>non fungible token</b> has expired, the user can <b>not</b> disassociate if their token\n balance is not zero. The transaction will resolve to TRANSACTION_REQUIRED_ZERO_TOKEN_BALANCES.\n On success, associations between the provided account and tokens are removed.\n @param account The account to be dissociated from the provided tokens\n @param tokens The tokens to be dissociated from the provided account.\n @return responseCode The response code for the status of the request. SUCCESS is 22."
+            },
+            "functionSelector": "78b63918",
+            "id": 1048,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dissociateTokens",
+            "nameLocation": "8530:16:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1044,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1040,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "8555:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8547:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1039,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8547:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1043,
+                  "mutability": "mutable",
+                  "name": "tokens",
+                  "nameLocation": "8581:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8564:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1041,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "8564:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1042,
+                    "nodeType": "ArrayTypeName",
+                    "src": "8564:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8546:42:2"
+            },
+            "returnParameters": {
+              "id": 1047,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1046,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "8611:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "8607:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1045,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8607:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8606:18:2"
+            },
+            "scope": 1087,
+            "src": "8521:104:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1049,
+              "nodeType": "StructuredDocumentation",
+              "src": "8631:259:2",
+              "text": "Single-token variant of dissociateTokens. Will be mapped to a single entry array call of dissociateTokens\n @param account The account to be associated with the provided token\n @param token The token to be associated with the provided account"
+            },
+            "functionSelector": "099794e8",
+            "id": 1058,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dissociateToken",
+            "nameLocation": "8904:15:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1051,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "8928:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8920:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1050,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8920:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1053,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "8945:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8937:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1052,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8937:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8919:32:2"
+            },
+            "returnParameters": {
+              "id": 1057,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1056,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "8974:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1058,
+                  "src": "8970:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1055,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8970:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8969:18:2"
+            },
+            "scope": 1087,
+            "src": "8895:93:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1059,
+              "nodeType": "StructuredDocumentation",
+              "src": "9080:230:2",
+              "text": "Initiates a Fungible Token Transfer\n @param token The ID of the token as a solidity address\n @param accountId account to do a transfer to/from\n @param amount The amount from the accountId at the same index"
+            },
+            "functionSelector": "82bba493",
+            "id": 1072,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferTokens",
+            "nameLocation": "9324:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1068,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1061,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "9347:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9339:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1060,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9339:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1064,
+                  "mutability": "mutable",
+                  "name": "accountId",
+                  "nameLocation": "9371:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9354:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1062,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "9354:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1063,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9354:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1067,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "9397:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9382:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int64_$dyn_memory_ptr",
+                    "typeString": "int64[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1065,
+                      "name": "int64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "9382:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int64",
+                        "typeString": "int64"
+                      }
+                    },
+                    "id": 1066,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9382:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int64_$dyn_storage_ptr",
+                      "typeString": "int64[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9338:66:2"
+            },
+            "returnParameters": {
+              "id": 1071,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1070,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "9435:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1072,
+                  "src": "9431:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1069,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9431:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9430:18:2"
+            },
+            "scope": 1087,
+            "src": "9315:134:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1073,
+              "nodeType": "StructuredDocumentation",
+              "src": "9455:540:2",
+              "text": "Transfers tokens where the calling account/contract is implicitly the first entry in the token transfer list,\n where the amount is the value needed to zero balance the transfers. Regular signing rules apply for sending\n (positive amount) or receiving (negative amount)\n @param token The token to transfer to/from\n @param sender The sender for the transaction\n @param recipient The receiver of the transaction\n @param amount Non-negative value to send. a negative value will result in a failure."
+            },
+            "functionSelector": "eca36917",
+            "id": 1086,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferToken",
+            "nameLocation": "10009:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1082,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1075,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "10031:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10023:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1074,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10023:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1077,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "10046:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10038:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1076,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10038:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1079,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "10062:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10054:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1078,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10054:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1081,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "10079:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10073:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  },
+                  "typeName": {
+                    "id": 1080,
+                    "name": "int64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10073:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int64",
+                      "typeString": "int64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10022:64:2"
+            },
+            "returnParameters": {
+              "id": 1085,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1084,
+                  "mutability": "mutable",
+                  "name": "responseCode",
+                  "nameLocation": "10117:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1086,
+                  "src": "10113:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1083,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10113:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10112:18:2"
+            },
+            "scope": 1087,
+            "src": "10000:131:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1088,
+        "src": "106:10029:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:10096:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-27T21:03:56.839Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "associateToken(address,address)": {
+        "params": {
+          "account": "The account to be associated with the provided token",
+          "token": "The token to be associated with the provided account"
+        }
+      },
+      "associateTokens(address,address[])": {
+        "params": {
+          "account": "The account to be associated with the provided tokens",
+          "tokens": "The tokens to be associated with the provided account. In the case of NON_FUNGIBLE_UNIQUE               Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that               token type"
+        },
+        "returns": {
+          "responseCode": "The response code for the status of the request. SUCCESS is 22."
+        }
+      },
+      "burnToken(address,uint64,int64[])": {
+        "params": {
+          "amount": "Applicable to tokens of type FUNGIBLE_COMMON. The amount to burn from the Treasury Account.                Amount must be a positive non-zero number, not bigger than the token balance of the treasury                account (0; balance], represented in the lowest denomination.",
+          "serialNumbers": "Applicable to tokens of type NON_FUNGIBLE_UNIQUE. The list of serial numbers to be burned.",
+          "token": "The token for which to burn tokens. If token does not exist, transaction results in              INVALID_TOKEN_ID"
+        },
+        "returns": {
+          "newTotalSupply": "The new supply of tokens. For NFTs it is the total count of NFTs",
+          "responseCode": "The response code for the status of the request. SUCCESS is 22."
+        }
+      },
+      "cryptoTransfer((address,(address,int64)[],(address,address,int64)[])[])": {
+        "params": {
+          "tokenTransfers": "the list of transfers to do"
+        },
+        "returns": {
+          "responseCode": "The response code for the status of the request. SUCCESS is 22."
+        }
+      },
+      "dissociateToken(address,address)": {
+        "params": {
+          "account": "The account to be associated with the provided token",
+          "token": "The token to be associated with the provided account"
+        }
+      },
+      "dissociateTokens(address,address[])": {
+        "params": {
+          "account": "The account to be dissociated from the provided tokens",
+          "tokens": "The tokens to be dissociated from the provided account."
+        },
+        "returns": {
+          "responseCode": "The response code for the status of the request. SUCCESS is 22."
+        }
+      },
+      "mintToken(address,uint64,bytes[])": {
+        "params": {
+          "amount": "Applicable to tokens of type FUNGIBLE_COMMON. The amount to mint to the Treasury Account.               Amount must be a positive non-zero number represented in the lowest denomination of the               token. The new supply must be lower than 2^63.",
+          "metadata": "Applicable to tokens of type NON_FUNGIBLE_UNIQUE. A list of metadata that are being created.                 Maximum allowed size of each metadata is 100 bytes",
+          "token": "The token for which to mint tokens. If token does not exist, transaction results in              INVALID_TOKEN_ID"
+        },
+        "returns": {
+          "newTotalSupply": "The new supply of tokens. For NFTs it is the total count of NFTs",
+          "responseCode": "The response code for the status of the request. SUCCESS is 22.",
+          "serialNumbers": "If the token is an NFT the newly generate serial numbers, othersise empty."
+        }
+      },
+      "transferToken(address,address,address,int64)": {
+        "params": {
+          "amount": "Non-negative value to send. a negative value will result in a failure.",
+          "recipient": "The receiver of the transaction",
+          "sender": "The sender for the transaction",
+          "token": "The token to transfer to/from"
+        }
+      },
+      "transferTokens(address,address[],int64[])": {
+        "params": {
+          "accountId": "account to do a transfer to/from",
+          "amount": "The amount from the accountId at the same index",
+          "token": "The ID of the token as a solidity address"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "associateToken(address,address)": {
+        "notice": "Single-token variant of associateTokens. Will be mapped to a single entry array call of associateTokens"
+      },
+      "associateTokens(address,address[])": {
+        "notice": "Associates the provided account with the provided tokens. Must be signed by the provided  Account's key or called from the accounts contract key  If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID.  If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED.  If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF.  If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED.  If an association between the provided account and any of the tokens already exists, the  transaction will resolve to TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT.  If the provided account's associations count exceed the constraint of maximum token associations    per account, the transaction will resolve to TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED.  On success, associations between the provided account and tokens are made and the account is    ready to interact with the tokens."
+      },
+      "burnToken(address,uint64,int64[])": {
+        "notice": "Burns an amount of the token from the defined treasury account"
+      },
+      "cryptoTransfer((address,(address,int64)[],(address,address,int64)[])[])": {
+        "notice": "Initiates a Token Transfer"
+      },
+      "dissociateToken(address,address)": {
+        "notice": "Single-token variant of dissociateTokens. Will be mapped to a single entry array call of dissociateTokens"
+      },
+      "dissociateTokens(address,address[])": {
+        "notice": "Dissociates the provided account with the provided tokens. Must be signed by the provided Account's key. If the provided account is not found, the transaction will resolve to INVALID_ACCOUNT_ID. If the provided account has been deleted, the transaction will resolve to ACCOUNT_DELETED. If any of the provided tokens is not found, the transaction will resolve to INVALID_TOKEN_REF. If any of the provided tokens has been deleted, the transaction will resolve to TOKEN_WAS_DELETED. If an association between the provided account and any of the tokens does not exist, the transaction will resolve to TOKEN_NOT_ASSOCIATED_TO_ACCOUNT. If a token has not been deleted and has not expired, and the user has a nonzero balance, the transaction will resolve to TRANSACTION_REQUIRES_ZERO_TOKEN_BALANCES. If a <b>fungible token</b> has expired, the user can disassociate even if their token balance is not zero. If a <b>non fungible token</b> has expired, the user can <b>not</b> disassociate if their token balance is not zero. The transaction will resolve to TRANSACTION_REQUIRED_ZERO_TOKEN_BALANCES. On success, associations between the provided account and tokens are removed."
+      },
+      "mintToken(address,uint64,bytes[])": {
+        "notice": "Mints an amount of the token to the defined treasury account"
+      },
+      "transferToken(address,address,address,int64)": {
+        "notice": "Transfers tokens where the calling account/contract is implicitly the first entry in the token transfer list, where the amount is the value needed to zero balance the transfers. Regular signing rules apply for sending (positive amount) or receiving (negative amount)"
+      },
+      "transferTokens(address,address[],int64[])": {
+        "notice": "Initiates a Fungible Token Transfer"
+      }
+    },
+    "version": 1
+  }
+}

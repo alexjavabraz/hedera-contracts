@@ -1,0 +1,235 @@
+{
+  "contractName": "TokenManagement",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"Management of Token Smart Contracts \",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"v0.1.0 Author(s): Alex Braz\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/TokenManagement.sol\":\"TokenManagement\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/HederaResponseCodes.sol\":{\"keccak256\":\"0x0cf5668a924216aa68ed1e1763afc153c18ae7a841d3f4d6aaab99a339fb9b60\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c8a01a2707f709dd12aa044f377d44512165b79705ff60a266b3335ea3dabe8e\",\"dweb:/ipfs/QmdRSTKuLtAaNcGiroguQEwRUEQrfEEEvXrJm6zPWnUBKr\"]},\"project:/contracts/HederaTokenService.sol\":{\"keccak256\":\"0x8f68d5c2c2fc9c035234756b5a47cff2d18f7a263b48372b6c9748076e11bfce\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a64259e024b1e2094f305f05f1563835686a3f959b35353c2d8bb9272886997f\",\"dweb:/ipfs/QmUV3a2ou9byvuNxy7w5a1kS9hiBwC4kTeW5CWSmbrzoYE\"]},\"project:/contracts/IHederaTokenService.sol\":{\"keccak256\":\"0xc2ff611feb16b056da9164dfa9385423bb4564ea4d21cbd536ab0688948e3414\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://efbfeb0ba99f0b65050f4db9c0764092a4740b679123103aaf3d5253ef3c6085\",\"dweb:/ipfs/QmYFitokhKRFwAFz1RdhiZorUoQe84bSjuvEjbVx3m1E68\"]},\"project:/contracts/TokenManagement.sol\":{\"keccak256\":\"0xb7da8bb7d806ba030a607470a43432cf1ceaf10883540d9d8603aeb0ae2c48c7\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e24a67e09a3cd25a8f3b186c7ee6e1c0967afb76c19ecac939524d47eb6eeea8\",\"dweb:/ipfs/QmUaxapQTfHfJuyG8z6Ze2fC3YHUjTctUtAZYF5dTACi2N\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220217ce67d91188480feb0db8129c86f3dbb303ff6ef424de0409e3ff569f72c3664736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220217ce67d91188480feb0db8129c86f3dbb303ff6ef424de0409e3ff569f72c3664736f6c634300080b0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "237:51:5:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "237:51:5:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nimport \"./HederaTokenService.sol\";\nimport \"./HederaResponseCodes.sol\";\n\n/**\n * v0.1.0\n * Author(s): Alex Braz\n *\n * @title Management of Token Smart Contracts\n * \n */\ncontract TokenManagement is HederaTokenService{\n\n\n}",
+  "sourcePath": "/home/abraz/projetos/hedera-contracts/contracts/TokenManagement.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/TokenManagement.sol",
+    "exportedSymbols": {
+      "HederaResponseCodes": [
+        518
+      ],
+      "HederaTokenService": [
+        947
+      ],
+      "IHederaTokenService": [
+        1087
+      ],
+      "TokenManagement": [
+        1301
+      ]
+    },
+    "id": 1302,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1295,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:31:5"
+      },
+      {
+        "absolutePath": "project:/contracts/HederaTokenService.sol",
+        "file": "./HederaTokenService.sol",
+        "id": 1296,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1302,
+        "sourceUnit": 948,
+        "src": "70:34:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/HederaResponseCodes.sol",
+        "file": "./HederaResponseCodes.sol",
+        "id": 1297,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1302,
+        "sourceUnit": 519,
+        "src": "105:35:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1299,
+              "name": "HederaTokenService",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 947,
+              "src": "265:18:5"
+            },
+            "id": 1300,
+            "nodeType": "InheritanceSpecifier",
+            "src": "265:18:5"
+          }
+        ],
+        "canonicalName": "TokenManagement",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1298,
+          "nodeType": "StructuredDocumentation",
+          "src": "142:94:5",
+          "text": " v0.1.0\n Author(s): Alex Braz\n @title Management of Token Smart Contracts\n "
+        },
+        "fullyImplemented": true,
+        "id": 1301,
+        "linearizedBaseContracts": [
+          1301,
+          947,
+          518
+        ],
+        "name": "TokenManagement",
+        "nameLocation": "246:15:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1302,
+        "src": "237:51:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:251:5"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/TokenManagement.sol",
+    "exportedSymbols": {
+      "HederaResponseCodes": [
+        518
+      ],
+      "HederaTokenService": [
+        947
+      ],
+      "IHederaTokenService": [
+        1087
+      ],
+      "TokenManagement": [
+        1301
+      ]
+    },
+    "id": 1302,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1295,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:31:5"
+      },
+      {
+        "absolutePath": "project:/contracts/HederaTokenService.sol",
+        "file": "./HederaTokenService.sol",
+        "id": 1296,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1302,
+        "sourceUnit": 948,
+        "src": "70:34:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/HederaResponseCodes.sol",
+        "file": "./HederaResponseCodes.sol",
+        "id": 1297,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1302,
+        "sourceUnit": 519,
+        "src": "105:35:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1299,
+              "name": "HederaTokenService",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 947,
+              "src": "265:18:5"
+            },
+            "id": 1300,
+            "nodeType": "InheritanceSpecifier",
+            "src": "265:18:5"
+          }
+        ],
+        "canonicalName": "TokenManagement",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1298,
+          "nodeType": "StructuredDocumentation",
+          "src": "142:94:5",
+          "text": " v0.1.0\n Author(s): Alex Braz\n @title Management of Token Smart Contracts\n "
+        },
+        "fullyImplemented": true,
+        "id": 1301,
+        "linearizedBaseContracts": [
+          1301,
+          947,
+          518
+        ],
+        "name": "TokenManagement",
+        "nameLocation": "246:15:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1302,
+        "src": "237:51:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:251:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-27T21:03:56.847Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "Management of Token Smart Contracts ",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "v0.1.0 Author(s): Alex Braz",
+    "version": 1
+  }
+}

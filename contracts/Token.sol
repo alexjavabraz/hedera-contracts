@@ -2,23 +2,19 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "./HederaTokenService.sol";
-import "./HederaResponseCodes.sol";
 
-/**
- * v0.1.0
- * Author(s): Alex Braz
- *
- * @title Generic Token Creator
- * 
- */
+/// @title A Token Generator for Campaign
+/// @author Alex Braz
+/// @notice Generates a custom Token for any campaign
+/// @dev v1.0 basic ERC-21 
 contract Token {
 
     address owner;
-    uint256 initialSupply = 1000;
-    uint256 totalSupply = 1000;
-    bytes32 public tokenName;
-    bytes32 public tokenSymbol;
+    uint256 initialSupply;
+    uint256 inContractSupply;
+    string public tokenName;
+    string public tokenSymbol;
+    string public compaignName;
     string public version = "1.0";
     uint8 decimals = 2;
     mapping (address => uint256) public balances;
@@ -28,11 +24,13 @@ contract Token {
     event Transfer(address indexed from, address indexed to, uint value);
     event Approval(address indexed sender, address indexed spender, uint value);
 
-    constructor(bytes32 _tokenName, bytes32 _tokenSymbol) {
+    constructor(string memory _tokenName, string memory _tokenSymbol, uint256 _initialSupply ) {
         tokenName = _tokenName;
         tokenSymbol = _tokenSymbol;
         balances[msg.sender] = initialSupply;
         owner = msg.sender;
+        initialSupply = _initialSupply;
+        inContractSupply = _initialSupply;
     }
 
     modifier onlyOwner {
@@ -54,6 +52,10 @@ contract Token {
     function balanceOf(address _owner) public onlyOwner view returns (uint256 balance) {
         if (msg.sender != owner) return 0;
 
+        return balances[_owner];
+    }
+
+    function getBalance(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }
 
