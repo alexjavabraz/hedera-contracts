@@ -35,7 +35,15 @@ contract Token {
         owner = msg.sender;
     }
 
-    function transfer(address _to, uint256 _value) public returns (bool success) {
+    modifier onlyOwner {
+        require(
+            msg.sender == owner,
+            "Only owner can call this function."
+        );
+        _;
+    }
+
+    function transfer(address _to, uint256 _value) public onlyOwner returns (bool success) {
         require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
         balances[_to] += _value;
@@ -43,7 +51,7 @@ contract Token {
         return true;
     }
  
-    function balanceOf(address _owner) public view returns (uint256 balance) {
+    function balanceOf(address _owner) public onlyOwner view returns (uint256 balance) {
         if (msg.sender != owner) return 0;
 
         return balances[_owner];
@@ -51,6 +59,10 @@ contract Token {
 
     function myBalance() public view returns (uint256 balance) {
         return balances[msg.sender];
+    }
+
+    function destroy() public onlyOwner payable{
+        selfdestruct(payable(owner));
     }
 
 }
